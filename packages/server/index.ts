@@ -1,4 +1,5 @@
 import express from "express";
+import router from "./routes";
 
 declare global {
   namespace NodeJS {
@@ -12,9 +13,7 @@ declare global {
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("Successfully started");
-});
+app.use("", router);
 
 // show "Server is Running at >>> localhost:4000" on your terminal.
 app.listen(PORT, () =>
